@@ -28,6 +28,8 @@ import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { ConfirmationService } from 'primeng/api';
 import { MessageService } from 'primeng/api';
 import { InputTextareaModule } from 'primeng/inputtextarea';
+import { HomeComponent } from './home/home.component';
+import { PanelModule } from 'primeng/panel';
 
 @NgModule({
   imports: [
@@ -53,9 +55,10 @@ import { InputTextareaModule } from 'primeng/inputtextarea';
     InputNumberModule,
     ConfirmDialogModule,
     InputTextareaModule,
+    PanelModule,
     RouterModule.forRoot([{ path: '', component: AppComponent }]),
   ],
-  declarations: [AppComponent],
+  declarations: [AppComponent, HomeComponent],
   bootstrap: [AppComponent],
   providers: [ProductService, MessageService, ConfirmationService],
 })
