@@ -1,15 +1,24 @@
 <div class="ui-g">
+    <p-toast></p-toast>
+
+    <p-confirmDialog header="Confirmacion" icon="pi pi-exclamation-triangle"></p-confirmDialog>
+
     <p-panel header="Administracion de Ciudades" [style]="{width: '70%', margin: '0 auto'}">
-        <p-table [value]="countries" [columns]="cols" [paginator]="true" [rows]="15">
+        <div style="margin-bottom: 20px">
+            <p-menubar [model]="items"></p-menubar>
+        </div>
+        <p-table [value]="countries" [columns]="cols" [responsive]="true" selectionMode="single" [(selection)]="selectedCountry" dataKey="ID" [paginator]="true" [rows]="15" >
             <ng-template pTemplate="header" let-columns>
                 <tr>
-                    <th *ngFor="let col of columns">
+                    
+                    <th *ngFor="let col of columns" [pSortableColumn]="col.field" [style]="{width: '10rem'}">
                         {{ col.header }}
+                        <p-sortIcon [field]="col.field"></p-sortIcon>
                     </th>
                 </tr>
             </ng-template>
             <ng-template pTemplate="body" let-country let-persona let-columns="columns">
-                <tr>
+                <tr [pSelectableRow]="country">
                     <td *ngFor="let col of columns">
                         {{ country[col.field] }}
                     </td>
@@ -17,4 +26,37 @@
             </ng-template>
         </p-table>
     </p-panel>
+    <p-dialog header="Ciudad" [responsive]="true" [(visible)]="displaySaveDialog" [modal]="true">
+        <div class="ui-g  ui-fluid">
+            <div class="ui-g-12">
+                <div class="ui-g-4">
+                    <label for="CP">CP</label>
+                </div>
+                <div class="ui-g-8">
+                    <input pInputText id="CP" [(ngModel)]="country.CP"/>
+                </div>
+            </div>
+            <div class="ui-g-12">
+                <div class="ui-g-4">
+                    <label for="CIUDADID">CIUDAD</label>
+                </div>
+                <div class="ui-g-8">
+                    <input pInputText id="CIUDADID" [(ngModel)]="country.CIUDADID"/>
+                </div>
+            </div>
+            <div class="ui-g-12">
+                <div class="ui-g-4">
+                    <label for="PROVINCIA">PROVINCIA</label>
+                </div>
+                <div class="ui-g-8">
+                    <input pInputText id="PROVINCIA" [(ngModel)]="country.PROVINCIA"/>
+                </div>
+            </div>
+        </div>
+        <p-footer>
+            <div class="ui-dialog-buttonpane ui-helper-clearfix">
+                <button type="button" pButton icon="pi pi-check" (click)=" save()" label="Guardar"></button>
+            </div>
+        </p-footer>
+    </p-dialog>
 </div>
