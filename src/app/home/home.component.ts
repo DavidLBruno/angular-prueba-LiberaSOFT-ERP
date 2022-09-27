@@ -68,6 +68,11 @@ export class HomeComponent implements OnInit {
   }
 
   save() {
+    let countryCreated = this.country;
+    countryCreated.ID = this.countries.length + 1;
+
+    this.countries.push(countryCreated);
+
     this.countriesService.save(this.country).subscribe(
       (result: any) => {
         let country = result as Country;
@@ -97,6 +102,11 @@ export class HomeComponent implements OnInit {
     this.confirmService.confirm({
       message: 'Esta seguro de eliminar la ciudad?',
       accept: () => {
+        this.countries.forEach((element, index) => {
+          element.ID == this.selectedCountry.ID
+            ? this.countries.splice(index, 1)
+            : null;
+        });
         this.countriesService
           .delete(this.selectedCountry.ID)
           .subscribe((result: any) => {
