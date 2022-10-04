@@ -1,1 +1,54 @@
-<p>cargar-cliente works!</p>
+<div class="container">
+    <form #checkoutForm="ngForm">
+            <div class="p-inputgroup">
+                <span class="p-inputgroup-addon"><i class="pi pi-user"></i></span>
+                <input
+                type="text"
+                pInputText
+                placeholder="Username"
+                matInput
+                required
+                [(ngModel)]="model.name"
+                name="name"
+                #store="ngModel"
+                >         
+            </div>
+
+            <div class="p-inputgroup">
+                <span class="p-inputgroup-addon"><i class="pi pi-wallet"></i></span>
+                <input
+                type="text"
+                pInputText
+                placeholder="Mail"
+                matInput
+                required
+                [(ngModel)]="model.mail"
+                name="mail"
+                #store="ngModel"
+                >         
+            </div>
+
+            <div class="p-inputgroup">
+                <span class="p-inputgroup-addon"><i class="pi pi-eye-slash"></i></span>
+                <input
+                type="password"
+                pInputText
+                placeholder="Password"
+                matInput
+                required
+                [(ngModel)]="model.password"
+                name="password"
+                #store="ngModel"
+                >         
+            </div>
+    </form>
+
+    <div class="container__button">
+        <p-button
+        label="Click"
+        [disabled]="!checkoutForm.form.valid"
+        (click)="onSubmit()">
+    </p-button>
+    </div>
+</div>
+
