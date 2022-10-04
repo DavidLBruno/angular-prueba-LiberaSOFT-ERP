@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ConfirmationService, MenuItem, MessageService } from 'primeng/api';
-import { Country } from 'src/model/Country';
+import { Country } from 'src/model/country';
 import { CountriesService } from '../service/countries.service';
 
 @Component({

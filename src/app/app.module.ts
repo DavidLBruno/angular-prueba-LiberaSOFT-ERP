@@ -3,11 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
-import { ProductService } from './productservice';
-
 import { TableModule } from 'primeng/table';
 import { ToastModule } from 'primeng/toast';
 import { CalendarModule } from 'primeng/calendar';
@@ -31,7 +28,8 @@ import { InputTextareaModule } from 'primeng/inputtextarea';
 import { HomeComponent } from './home/home.component';
 import { PanelModule } from 'primeng/panel';
 import { MenubarModule } from 'primeng/menubar';
-import { MenuItem } from 'primeng/api';
+import { TabMenuModule } from 'primeng/tabmenu';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   imports: [
@@ -59,11 +57,11 @@ import { MenuItem } from 'primeng/api';
     InputTextareaModule,
     PanelModule,
     MenubarModule,
-
-    RouterModule.forRoot([{ path: '', component: AppComponent }]),
+    TabMenuModule,
+    AppRoutingModule,
   ],
   declarations: [AppComponent, HomeComponent],
   bootstrap: [AppComponent],
-  providers: [ProductService, MessageService, ConfirmationService],
+  providers: [MessageService, ConfirmationService],
 })
 export class AppModule {}
