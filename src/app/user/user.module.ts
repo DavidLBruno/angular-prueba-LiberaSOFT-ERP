@@ -5,10 +5,11 @@ import { UserRoutingModule } from './user-routing.module';
 import { UserComponent } from './user.component';
 import { CargarClienteComponent } from './cargar-cliente/cargar-cliente.component';
 import { FormsModule } from '@angular/forms';
-import { ButtonModule } from 'primeng/button';
+
+import { PrimeNGModule } from '../primeNg.module';
 
 @NgModule({
   declarations: [UserComponent, CargarClienteComponent],
-  imports: [CommonModule, UserRoutingModule, FormsModule, ButtonModule],
+  imports: [CommonModule, UserRoutingModule, FormsModule, PrimeNGModule],
 })
 export class UserModule {}

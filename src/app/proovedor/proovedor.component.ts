@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { cityServices } from './service/city.service';
+import { PrimeNGConfig } from 'primeng/api';
 
 @Component({
   selector: 'app-proovedor',
@@ -12,11 +13,16 @@ export class ProovedorComponent implements OnInit {
     CP: undefined,
     PROVINCIA: '',
   };
-  constructor(private citySvc: cityServices) {}
+  constructor(
+    private citySvc: cityServices,
+    private primengConfig: PrimeNGConfig
+  ) {}
 
   createCity(): void {
     this.citySvc.createCity(this.model).pipe().subscribe();
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.primengConfig.ripple = true;
+  }
 }
