@@ -28,6 +28,7 @@ export class AppComponent {
         routerLink: '/user/cargarCliente',
       },
       { label: 'Proovedor', icon: 'pi pi-car', routerLink: '/proovedor' },
+      { label: 'Cronometro', icon: 'pi pi-clock', routerLink: '/clock' },
     ];
   }
 }

@@ -1,0 +1,17 @@
+<p-card class="container">
+    <ng-template pTemplate="header">
+        <h1>Segundos: {{seconds}}</h1>
+    </ng-template>
+    
+    <div class="container__button">
+
+        <p-button (click)="startClock()">
+            Iniciar
+        </p-button>
+
+        <p-button (click)="resetClock()">
+            Reiniciar
+        </p-button>
+
+    </div>
+</p-card>

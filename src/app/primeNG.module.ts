@@ -24,6 +24,7 @@ import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { PanelModule } from 'primeng/panel';
 import { MenubarModule } from 'primeng/menubar';
 import { TabMenuModule } from 'primeng/tabmenu';
+import { Card, CardModule } from 'primeng/card';
 
 @NgModule({
   exports: [
@@ -51,6 +52,7 @@ import { TabMenuModule } from 'primeng/tabmenu';
     PanelModule,
     MenubarModule,
     TabMenuModule,
+    CardModule,
   ],
 })
 export class PrimeNGModule {}

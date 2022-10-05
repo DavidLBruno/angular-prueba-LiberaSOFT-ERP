@@ -7,7 +7,6 @@ import { CargarClienteComponent } from './cargar-cliente/cargar-cliente.componen
 import { FormsModule } from '@angular/forms';
 
 import { PrimeNGModule } from '../primeNg.module';
-
 @NgModule({
   declarations: [UserComponent, CargarClienteComponent],
   imports: [CommonModule, UserRoutingModule, FormsModule, PrimeNGModule],
